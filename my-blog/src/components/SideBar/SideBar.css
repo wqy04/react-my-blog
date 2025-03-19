@@ -1,0 +1,113 @@
+.sidebar {
+    padding: 1.5rem;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); /* 更柔和的阴影 */
+    min-width: 250px;
+    position: relative;
+    transition: transform 0.3s ease;
+  }
+  
+  /* 悬浮整体效果 */
+  .sidebar:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.12);
+  }
+  
+  h3 {
+    color: #2d3748;
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin: 1.5rem 0 1rem;
+    padding-bottom: 0.5rem;
+    position: relative;
+  }
+  
+  h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 3px;
+    background: linear-gradient(90deg, #4299e1, #667eea);
+    border-radius: 2px;
+  }
+  
+  /* 分类列表增强 */
+  .category-list {
+    margin-bottom: 2rem !important;
+  }
+  
+  .category-item {
+    padding: 0.75rem 1.25rem; /* 增加内边距 */
+    margin: 0.75rem 0; /* 增大间距 */
+    background: #f8fafc;
+    border-radius: 8px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* 更顺滑的贝塞尔曲线 */
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #edf2f7; /* 添加边框 */
+  }
+  
+  .category-item:hover {
+    background: #f0f8ff;
+    transform: translateX(8px); /* 增大悬浮位移 */
+    box-shadow: 2px 4px 12px rgba(66, 153, 225, 0.15); /* 添加投影 */
+  }
+  
+  .category-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 3px;
+    background: linear-gradient(180deg, #4299e1, #667eea); /* 渐变侧边线 */
+    transition: all 0.3s ease;
+    opacity: 0;
+  }
+  
+  .category-item:hover::before {
+    opacity: 1;
+    width: 4px;
+  }
+  
+  /* 标签云升级 */
+  .tag-cloud {
+    gap: 10px; /* 增大间距 */
+  }
+  
+  .tag-item {
+    background: rgba(66, 153, 225, 0.12) !important;
+    border: 1px solid #bee3f8 !important;
+    color: #2b6cb0;
+    font-size: 0.875rem;
+    padding: 0.5rem 1rem; /* 调整内边距 */
+    border-radius: 24px; /* 更圆润 */
+    transition: all 0.25s ease;
+    font-weight: 500; /* 加粗字体 */
+  }
+  
+  .tag-item:hover {
+    background: linear-gradient(135deg, #4299e1, #667eea) !important;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(66, 153, 225, 0.25); /* 增强投影 */
+    border-color: transparent !important;
+  }
+  
+  /* 响应式优化 */
+  @media (max-width: 768px) {
+    .sidebar {
+      margin: 1rem 0;
+      width: 100%;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    }
+    
+    .category-item {
+      padding: 0.75rem;
+      margin: 0.5rem 0;
+    }
+  }
